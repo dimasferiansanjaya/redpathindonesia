@@ -1,0 +1,45 @@
+{
+  "menu": [
+    {
+      "url": "/",
+      "name": "Home",
+      "icon": "home",
+      "slug": "home"
+    },
+    {
+      "url": "sop-management",
+      "name": "SOP Management",
+      "icon": "book",
+      "slug": "sop"
+    },
+    {
+      "navheader": "Administrator",
+      "slug": ""
+    },
+    {
+      "name": "User Management",
+      "icon": "users",
+      "slug": "",
+      "submenu": [
+        {
+          "url": "layouts/collapsed-menu",
+          "name": "List",
+          "icon": "circle",
+          "slug": "collapsed-menu"
+        },
+        {
+          "url": "layouts/full",
+          "name": "Roles",
+          "icon": "circle",
+          "slug": "layout-full"
+        },
+        {
+          "url": "layouts/without-menu",
+          "name": "Permission",
+          "icon": "circle",
+          "slug": "without-menu"
+        }
+      ]
+    }
+  ]
+}
