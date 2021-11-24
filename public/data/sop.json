@@ -1,0 +1,88 @@
+{
+    "data": [
+        {
+            "responsive_id": "",
+            "id": 1,
+            "title": "Pest & Rodent Control in the Plant",
+            "department": "MRC",
+            "submitter": "Dimas Sanjaya",
+            "submission_date": "01/11/2020",
+            "status": 1
+        },
+        {
+            "responsive_id": "",
+            "id": 2,
+            "title": "Recruitment of Temporary Workers",
+            "department": "Raisebore",
+            "submitter": "Wahyu Pamungkas",
+            "submission_date": "06/07/2021",
+            "status": 2
+        },
+        {
+            "responsive_id": "",
+            "id": 3,
+            "title": "Change Hand-Over and Take over of Security Dept",
+            "department": "MRC",
+            "submitter": "Dimas Sanjaya",
+            "submission_date": "01/11/2020",
+            "status": 1
+        },{
+            "responsive_id": "",
+            "id": 4,
+            "title": "Medical Examination",
+            "department": "MRC",
+            "submitter": "Dimas Sanjaya",
+            "submission_date": "01/11/2020",
+            "status": 1
+        },{
+            "responsive_id": "",
+            "id": 5,
+            "title": "Entry and Exit Procedure",
+            "department": "MRC",
+            "submitter": "Dimas Sanjaya",
+            "submission_date": "01/11/2020",
+            "status": 1
+        },{
+            "responsive_id": "",
+            "id": 6,
+            "title": "House Keeping Procedure",
+            "department": "MRC",
+            "submitter": "Dimas Sanjaya",
+            "submission_date": "01/11/2020",
+            "status": 1
+        },{
+            "responsive_id": "",
+            "id": 7,
+            "title": "Company Policy for Visitors",
+            "department": "MRC",
+            "submitter": "Dimas Sanjaya",
+            "submission_date": "01/11/2020",
+            "status": 1
+        },{
+            "responsive_id": "",
+            "id": 8,
+            "title": "Cleaning of Insect Killer",
+            "department": "MRC",
+            "submitter": "Dimas Sanjaya",
+            "submission_date": "01/11/2020",
+            "status": 1
+        },{
+            "responsive_id": "",
+            "id": 9,
+            "title": "Sink & Floor Drain Sanitization",
+            "department": "MRC",
+            "submitter": "Dimas Sanjaya",
+            "submission_date": "01/11/2020",
+            "status": 1
+        },{
+            "responsive_id": "",
+            "id": 10,
+            "title": "Gowning Procedure For Entry in Manufacturing Area",
+            "department": "MRC",
+            "submitter": "Dimas Sanjaya",
+            "submission_date": "01/11/2020",
+            "status": 1
+        }
+    ]
+
+}
