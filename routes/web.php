@@ -4,8 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\DarkModeController;
-use App\Http\Controllers\ColorSchemeController;
 use App\Http\Controllers\TrainingController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ColorSchemeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -105,7 +106,11 @@ Route::middleware('auth')->group(function() {
     });
     Route::controller(TrainingController::class)->group(function(){
         Route::get('training-history', 'index')->name('training-history');
+        Route::get('training-history/import', 'show')->name('training-history.import');
         Route::post('training-history', 'importCSV')->name('training-history');
         Route::get('training-history/delete', 'deleteAll')->name('training-history-delete');
     });
 });
+
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('trainings', [App\Http\Controllers\API\TrainingController::class, 'index'])->name('training-all');

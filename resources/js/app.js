@@ -56,3 +56,4 @@ import "./side-menu";
 import "./mobile-menu";
 import "./side-menu-tooltip";
 import "./dark-mode-switcher";
+import "./pages/training-history"

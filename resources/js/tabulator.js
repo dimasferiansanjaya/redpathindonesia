@@ -1,5 +1,8 @@
 import xlsx from "xlsx";
-import { createIcons, icons } from "lucide";
+import {
+    createIcons,
+    icons
+} from "lucide";
 import Tabulator from "tabulator-tables";
 
 (function () {
@@ -11,6 +14,7 @@ import Tabulator from "tabulator-tables";
         let table = new Tabulator("#tabulator", {
             ajaxURL: "https://dummy-data.left4code.com",
             ajaxFiltering: true,
+            filterMode: "remote",
             ajaxSorting: true,
             printAsHtml: true,
             printStyled: true,
@@ -20,8 +24,7 @@ import Tabulator from "tabulator-tables";
             layout: "fitColumns",
             responsiveLayout: "collapse",
             placeholder: "No matching records found",
-            columns: [
-                {
+            columns: [{
                     formatter: "responsiveCollapse",
                     width: 40,
                     minWidth: 30,

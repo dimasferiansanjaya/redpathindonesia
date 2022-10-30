@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Http\Controllers\Controller;
 use App\Models\Training;
 use Illuminate\Http\Request;
-use League\CommonMark\Extension\CommonMark\Renderer\Block\ThematicBreakRenderer;
+use App\Http\Controllers\Controller;
 
 class TrainingController extends Controller
 {
@@ -16,10 +15,19 @@ class TrainingController extends Controller
      */
     public function index()
     {
-        $trainings = Training::query()->get();
-        return response()->json([
-            'data' => $trainings
-        ]);
+        $paginationSize = request()->size;
+        $trainings = Training::query();
+        // ->whereYear('course_end', now()->year)       
+        // ->whereMonth('course_end', now()->month);       
+        if (request()->filled('filters')){
+            $trainings = $trainings->where(
+                request()->filters[0]['field'] , 
+                request()->filters[0]['type'] , 
+                '%'.request()->filters[0]['value'].'%'
+            );
+        }
+        $trainings = $trainings->orderBy('course_end', 'desc')->paginate($paginationSize);
+        return $trainings;
     }
 
     /**
@@ -51,9 +59,10 @@ class TrainingController extends Controller
      */
     public function show(Request $request)
     {
-        $training = Training::query()->where('employee_id', $request->employeeId)->get();
-
+        $training   = Training::query()->where('employee_id', $request->employeeId)->orderBy('course_end', 'desc')->get();
+        $total      = $training->count();
         return response()->json([
+            'total' => $total,
             'data' => $training
         ]);
 

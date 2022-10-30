@@ -15,35 +15,39 @@ class SideMenu
         return [
             'dashboard' => [
                 'icon' => 'home',
-                'route_name' => 'dashboard-overview-1',
-                'params' => [
-                    'layout' => 'side-menu'
-                ],
+                'route_name' => 'dashboard',
                 'title' => 'Dashboard'
-                ],
+            ],
             'training' => [
-                'icon' => 'target',
+                'icon' => 'trello',
                 'title' => 'Training',
                 'sub_menu' => [
                     'training-history' => [
                         'icon' => 'rewind',
                         'route_name' => 'training-history',
-                        'params' => [
-                            'layout' => 'side-menu',
-                        ],
                         'title' => 'Training History'
                     ],
                     'training-reminder' => [
                         'icon' => 'clock',
-                        'route_name' => 'dashboard-overview-1',
-                        'params' => [
-                            'layout' => 'side-menu',
-                        ],
+                        // 'route_name' => '',
                         'title' => 'Training Reminder'
-                    ],
+                    ]
                 ]
-                ]
-
+            ],
+            'employee' => [
+                    'icon' => 'users',
+                    'title' => 'Employee',
+                    'sub_menu' => [
+                        'add-new-employee' => [
+                            'icon' => 'user-plus',
+                            'title' => 'Add New'
+                        ],
+                        'manage-employee' => [
+                            'icon' => 'layers',
+                            'title' => 'List'
+                        ],
+                    ]
+                    ]
         ];
     }
 }

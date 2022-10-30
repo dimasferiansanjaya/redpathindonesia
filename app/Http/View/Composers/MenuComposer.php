@@ -46,7 +46,7 @@ class MenuComposer
         } else if (request()->has('layout')) {
             return request()->query('layout');
         }
-
+        
         return 'side-menu';
     }
 

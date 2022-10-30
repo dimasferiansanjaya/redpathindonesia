@@ -1,4 +1,4 @@
-@extends('../layout/main')
+@extends('layout.main')
 
 @section('head')
     @yield('subhead')
@@ -12,7 +12,8 @@
         <ul>
             @foreach ($top_menu as $menuKey => $menu)
                 <li>
-                    <a href="{{ isset($menu['route_name']) ? route($menu['route_name'], $menu['params']) : 'javascript:;' }}" class="{{ $first_level_active_index == $menuKey ? 'top-menu top-menu--active' : 'top-menu' }}">
+                    <a href="{{ isset($menu['route_name']) ? route($menu['route_name'], $menu['params']) : 'javascript:;' }}"
+                        class="{{ $first_level_active_index == $menuKey ? 'top-menu top-menu--active' : 'top-menu' }}">
                         <div class="top-menu__icon">
                             <i data-lucide="{{ $menu['icon'] }}"></i>
                         </div>
@@ -27,7 +28,8 @@
                         <ul class="{{ $first_level_active_index == $menuKey ? 'top-menu__sub-open' : '' }}">
                             @foreach ($menu['sub_menu'] as $subMenuKey => $subMenu)
                                 <li>
-                                    <a href="{{ isset($subMenu['route_name']) ? route($subMenu['route_name'], $subMenu['params']) : 'javascript:;' }}" class="top-menu">
+                                    <a href="{{ isset($subMenu['route_name']) ? route($subMenu['route_name'], $subMenu['params']) : 'javascript:;' }}"
+                                        class="top-menu">
                                         <div class="top-menu__icon">
                                             <i data-lucide="activity"></i>
                                         </div>
@@ -39,10 +41,12 @@
                                         </div>
                                     </a>
                                     @if (isset($subMenu['sub_menu']))
-                                        <ul class="{{ $second_level_active_index == $subMenuKey ? 'top-menu__sub-open' : '' }}">
+                                        <ul
+                                            class="{{ $second_level_active_index == $subMenuKey ? 'top-menu__sub-open' : '' }}">
                                             @foreach ($subMenu['sub_menu'] as $lastSubMenuKey => $lastSubMenu)
                                                 <li>
-                                                    <a href="{{ isset($lastSubMenu['route_name']) ? route($lastSubMenu['route_name'], $lastSubMenu['params']) : 'javascript:;' }}" class="top-menu">
+                                                    <a href="{{ isset($lastSubMenu['route_name']) ? route($lastSubMenu['route_name'], $lastSubMenu['params']) : 'javascript:;' }}"
+                                                        class="top-menu">
                                                         <div class="top-menu__icon">
                                                             <i data-lucide="zap"></i>
                                                         </div>

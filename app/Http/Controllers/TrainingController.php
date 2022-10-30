@@ -7,6 +7,7 @@ use App\Imports\TrainingImport;
 use App\Jobs\ImportTrainingHistory;
 use App\Jobs\NotifyImportTrainingHistoryCompleted;
 use App\Models\Training;
+use Carbon\Carbon;
 use Maatwebsite\Excel\Facades\Excel;
 use PhpParser\Builder\Trait_;
 
@@ -14,7 +15,7 @@ class TrainingController extends Controller
 {
     public function index()
     {
-        return view('pages.training.training-reminder');
+        return view('pages.training.training-history');
     }
 
     public function importCSV(Request $request)
@@ -43,5 +44,14 @@ class TrainingController extends Controller
     {
         Training::truncate();
         return back()->with('success', 'All data deleted successfully.');
+    }
+
+    public function show()
+    {
+        $trainingHistory = number_format(Training::count());
+        $lastUpdateData = Training::orderBy('course_end', 'desc')->first()->course_end;
+        return view('pages.training.import', compact([
+            'trainingHistory', 'lastUpdateData'
+        ]));
     }
 }

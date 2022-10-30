@@ -1,7 +1,7 @@
-@extends('../layout/' . $layout)
+@extends('layout.side-menu')
 
 @section('subhead')
-    <title>Training History</title>
+    <title>Import Training History</title>
 @endsection
 
 @section('subcontent')
@@ -54,7 +54,28 @@
             </div>
             <!-- END: Vertical Form -->
         </div>
+
+        <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">
+            <div class="report-box zoom-in">
+                <div class="box p-5">
+                    <div class="flex">
+                        <i data-lucide="rewind" class="report-box__icon text-warning"></i>
+                        <div class="ml-auto">
+                            <div class="report-box__indicator bg-success tooltip cursor-pointer"
+                                title="Last Updated on {{ $lastUpdateData ?? 0 }}">
+                                {{ $lastUpdateData ?? 0 }} <i data-lucide="chevron-up" class="w-4 h-4 ml-0.5"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-3xl font-medium leading-8 mt-6">{{ $trainingHistory }}</div>
+                    <div class="text-base text-slate-500 mt-1">Total Data Training History</div>
+                </div>
+            </div>
+        </div>
+
     </div>
+
+
 
     <!-- BEGIN: Modal Content -->
     <div id="delete-modal" class="modal" tabindex="-1" aria-hidden="true">
